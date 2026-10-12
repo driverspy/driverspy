@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="420" viewBox="0 0 860 420" xml:space="preserve" role="img" aria-label="driverspy: hobby developer building web apps, Discord bots and self-hosted tools">
+  <title>driverspy@homelab</title>
+  <defs>
+    <filter id="glow" x="-10%" y="-30%" width="120%" height="160%">
+      <feGaussianBlur stdDeviation="2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="bigglow" x="-20%" y="-50%" width="140%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="4" height="2" fill="#000" opacity=".35"/>
+    </pattern>
+    <radialGradient id="vig" cx="50%" cy="50%" r="75%">
+      <stop offset="55%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity=".8"/>
+    </radialGradient>
+    <linearGradient id="roll" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#39ff6a" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#39ff6a" stop-opacity=".08"/>
+      <stop offset="1" stop-color="#39ff6a" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="scr"><rect x="20" y="20" width="820" height="360" rx="16"/></clipPath>
+  </defs>
+  <style>
+    .t { font-family: 'Courier New', Courier, 'DejaVu Sans Mono', monospace; font-weight: 700; font-size: 16px; }
+    .hi { fill: #39ff6a; }
+    .lo { fill: #1f9e43; }
+    .cmd { fill: #d6ffe0; }
+    .amb { fill: #ffb000; }
+    .title { font-family: 'Courier New', Courier, monospace; font-weight: 700; font-size: 60px; letter-spacing: 10px; }
+    .sub { font-family: 'Courier New', Courier, monospace; font-weight: 700; font-size: 14px; letter-spacing: 4px; }
+    .screen { transform-box: fill-box; transform-origin: center; animation: power .7s ease-out both; }
+    .flicker { animation: flicker 5s infinite; }
+    .glitch-r { animation: glr 6s infinite; }
+    .glitch-c { animation: glc 6s infinite; }
+    .roll { animation: roll 7s linear infinite; }
+    .o, .cur { opacity: 0; }
+    .o { animation: show .01s linear forwards; }
+    .led { animation: led 2.4s ease-in-out infinite; }
+    @keyframes power {
+      0%   { transform: scale(0, .004); opacity: 0; }
+      45%  { transform: scale(1, .004); opacity: 1; }
+      100% { transform: scale(1, 1); opacity: 1; }
+    }
+    @keyframes flicker { 0%, 100% { opacity: 1; } 92% { opacity: 1; } 93% { opacity: .82; } 94% { opacity: 1; } 96% { opacity: .9; } 97% { opacity: 1; } }
+    @keyframes glr { 0%, 90%, 100% { transform: translate(0, 0); } 91% { transform: translate(4px, 0); } 93% { transform: translate(-3px, 1px); } 95% { transform: translate(2px, 0); } }
+    @keyframes glc { 0%, 90%, 100% { transform: translate(0, 0); } 91% { transform: translate(-4px, 0); } 93% { transform: translate(3px, -1px); } 95% { transform: translate(-2px, 0); } }
+    @keyframes roll { from { transform: translateY(0); } to { transform: translateY(460px); } }
+    @keyframes show { to { opacity: 1; } }
+    @keyframes hide { to { opacity: 0; } }
+    @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0; } }
+    @keyframes led { 0%, 100% { opacity: 1; } 50% { opacity: .35; } }
+    @keyframes k1 { to { transform: translateX(57.6px); } }
+    @keyframes k2 { to { transform: translateX(124.8px); } }
+    @keyframes k3 { to { transform: translateX(240px); } }
+  </style>
+
+  <!-- monitor bezel -->
+  <rect width="860" height="420" rx="24" fill="#16181a"/>
+  <rect x="5" y="5" width="850" height="410" rx="20" fill="none" stroke="#2a2d31" stroke-width="2"/>
+  <rect x="20" y="20" width="820" height="360" rx="16" fill="#050a05"/>
+
+  <g clip-path="url(#scr)">
+    <g class="screen">
+      <g class="flicker">
+        <!-- title with RGB glitch -->
+        <g filter="url(#bigglow)">
+          <text class="title glitch-r" x="435" y="94" text-anchor="middle" fill="#ff2a6d" opacity=".55">DRIVERSPY</text>
+          <text class="title glitch-c" x="435" y="94" text-anchor="middle" fill="#05d9e8" opacity=".55">DRIVERSPY</text>
+          <text class="title hi" x="435" y="94" text-anchor="middle">DRIVERSPY</text>
+        </g>
+        <text class="sub lo" x="432" y="126" text-anchor="middle" filter="url(#glow)">WEB APPS  ·  DISCORD BOTS  ·  HOMELAB</text>
+        <line x1="40" y1="148" x2="820" y2="148" stroke="#145c29" stroke-width="2" stroke-dasharray="4 6"/>
+
+        <!-- terminal session -->
+        <g filter="url(#glow)">
+          <text class="t o" x="40" y="182" textLength="192" lengthAdjust="spacingAndGlyphs" style="animation-delay:.9s"><tspan class="hi">driverspy@homelab</tspan><tspan class="lo">:~$</tspan></text>
+          <text class="t cmd" x="241.6" y="182" textLength="57.6" lengthAdjust="spacingAndGlyphs">whoami</text>
+          <text class="t o lo" x="40" y="208" style="animation-delay:2s">driverspy :: <tspan class="hi">hobby developer</tspan> · tinkerer · self-hoster</text>
+
+          <text class="t o" x="40" y="240" textLength="192" lengthAdjust="spacingAndGlyphs" style="animation-delay:2.4s"><tspan class="hi">driverspy@homelab</tspan><tspan class="lo">:~$</tspan></text>
+          <text class="t cmd" x="241.6" y="240" textLength="124.8" lengthAdjust="spacingAndGlyphs">ls ~/projects</text>
+          <text class="t o lo" x="40" y="266" style="animation-delay:4.2s"><tspan class="hi">autorole/</tspan>   web-apps/   discord-bots/   homelab/   <tspan class="lo" opacity=".7">+ lots of private repos</tspan></text>
+
+          <text class="t o" x="40" y="298" textLength="192" lengthAdjust="spacingAndGlyphs" style="animation-delay:4.6s"><tspan class="hi">driverspy@homelab</tspan><tspan class="lo">:~$</tspan></text>
+          <text class="t cmd" x="241.6" y="298" textLength="240" lengthAdjust="spacingAndGlyphs">systemctl status autorole</text>
+          <text class="t o lo" x="40" y="324" style="animation-delay:7.1s"><tspan class="hi">●</tspan> autorole.service — <tspan class="hi">active (running)</tspan> · <tspan class="amb">autorole.gg</tspan></text>
+
+          <text class="t o" x="40" y="356" textLength="192" lengthAdjust="spacingAndGlyphs" style="animation-delay:7.5s"><tspan class="hi">driverspy@homelab</tspan><tspan class="lo">:~$</tspan></text>
+        </g>
+
+        <!-- typing covers: a black block slides right, carrying the cursor with it -->
+        <g style="animation:k1 .6s steps(6,end) 1.1s forwards">
+          <rect x="241.6" y="166" width="80" height="22" fill="#050a05"/>
+          <rect class="cur hi" x="241.6" y="168" width="9.6" height="18" filter="url(#glow)" style="animation:show .01s .9s forwards, hide .01s 2s forwards"/>
+        </g>
+        <g style="animation:k2 1.3s steps(13,end) 2.6s forwards">
+          <rect x="241.6" y="224" width="150" height="22" fill="#050a05"/>
+          <rect class="cur hi" x="241.6" y="226" width="9.6" height="18" filter="url(#glow)" style="animation:show .01s 2.4s forwards, hide .01s 4.2s forwards"/>
+        </g>
+        <g style="animation:k3 2s steps(25,end) 4.8s forwards">
+          <rect x="241.6" y="282" width="270" height="22" fill="#050a05"/>
+          <rect class="cur hi" x="241.6" y="284" width="9.6" height="18" filter="url(#glow)" style="animation:show .01s 4.6s forwards, hide .01s 7.1s forwards"/>
+        </g>
+        <rect class="cur hi" x="241.6" y="342" width="9.6" height="18" filter="url(#glow)" style="animation:show .01s 7.5s forwards, blink 1s steps(1,end) 7.5s infinite"/>
+      </g>
+    </g>
+
+    <!-- CRT overlays -->
+    <rect x="20" y="20" width="820" height="360" fill="url(#scan)"/>
+    <rect class="roll" x="20" y="-60" width="820" height="80" fill="url(#roll)"/>
+    <rect x="20" y="20" width="820" height="360" fill="url(#vig)"/>
+  </g>
+
+  <!-- bezel label + power LED -->
+  <text x="40" y="405" font-family="'Courier New', Courier, monospace" font-weight="700" font-size="11" letter-spacing="3" fill="#4a4f55">DRIVERSPY SYSTEMS  ·  MODEL DS-1987</text>
+  <circle class="led" cx="816" cy="401" r="4" fill="#39ff6a" filter="url(#glow)"/>
+  <text x="798" y="405" text-anchor="end" font-family="'Courier New', Courier, monospace" font-weight="700" font-size="10" letter-spacing="2" fill="#4a4f55">PWR</text>
+</svg>
