@@ -22,10 +22,6 @@
   <a href="https://autorole.gg"><img src="assets/autorole.svg" width="520" alt="Current quest: AutoRole, a Discord bot at autorole.gg" /></a>
 </p>
 
-<p align="center">
-  <code>🔒 most of my repos are private. what you see here is just the demo level.</code>
-</p>
-
 <h3 align="center">░▒▓ HIGH SCORE ▓▒░</h3>
 
 <p align="center">
